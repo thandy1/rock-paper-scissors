@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <!-- Main menu screen -->
+    <section id="main-menu">
+        <h1>Rock Paper Scissors</h1>
+        <ul>
+            <li>Choose Rock, Paper, or Scissors to play each round.</li>
+            <li>The computer picks randomly, and the winner is shown instantly.</li>
+            <li>First to 3 wins the match &mdash; play again or quit anytime.</li>
+        </ul>
+        <button type="button" id="start-button">Start Game</button>
+        <button type="button" id="how-to-play-button">How To Play</button>
+    </section>
+
+    <!-- Game screen -->
+    <section id="game-screen">
+        <div class="header">
+            <div class="scoreboard">
+                <div class="user-score">
+                    <span>You</span>
+                    <span id="player-score">0</span>
+                </div>
+                <div class="computer-score">
+                    <span>Computer</span>
+                    <span id="computer-score">0</span>
+                </div>
+            </div>
+            <button type="button" id="home-button">🏠
+                <!-- Image of a home should go here -->
+            </button>
+        </div>
+
+        <!-- Result display area -->
+        <div id="result-display">
+            <p id="result-message"></p>
+        </div>
+
+        <!-- Game over modal (hidden by default) -->
+        <div id="game-over-modal">
+            <p id="game-over-message"></p>
+            <button type="button" id="play-again-button">Play Again?</button>
+            <button type="button" id="quit-button">Quit</button>
+        </div>
+
+        <div class="choices-container">
+            <p>SELECT YOUR HAND</p>
+            <div class="choices">
+                <button type="button" class="choice-button" data-choice="rock">
+                    <img src="" alt="Rock">
+                    <p>ROCK</p>
+                </button>
+                <button type="button" class="choice-button"  data-choice="paper">
+                    <img src="" alt="Paper">
+                    <p>PAPER</p>
+                </button>
+                <button type="button" class="choice-button" data-choice="scissors">
+                    <img src="" alt="Scissors">
+                    <p>SCISSORS</p>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
