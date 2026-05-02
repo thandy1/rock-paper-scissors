@@ -1,13 +1,20 @@
 // DOM references
-const startButton = document.getElementById("start-button");
-const mainMenu = document.getElementById("main-menu");
-const gameScreen = document.getElementById("game-screen");
-const homeButton = document.getElementById("home-button");
+const quitButton = document.getElementById("quit-button");
 const choiceButtons = document.querySelectorAll(".choice-button");
-let playerScore = document.getElementById("player-score");
-let computerScore = document.getElementById("computer-score");
+const resultDisplay = document.getElementById("result-display");
+const resultMessage = document.getElementById("result-message");
+const playerScore = document.getElementById("player-score");
+const computerScore = document.getElementById("computer-score");
+const roundIndicator = document.getElementById("round-indicator");
 
 
+// Game state
+let playerScoreCount = 0;
+let computerScoreCount = 0;
+let roundCount = 0;
+
+
+// Event handles
 choiceButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         let playerChoice = button.dataset.choice;
@@ -16,7 +23,18 @@ choiceButtons.forEach(function(button) {
 });
 
 
-// Each key beats its value
+quitButton.addEventListener("click", function() {
+    playerScoreCount = 0;
+    computerScoreCount = 0;
+    roundCount = 1;
+    playerScore.textContent = 0;
+    computerScore.textContent = 0;
+    roundIndicator.textContent = 1;
+    resultMessage.textContent = "";
+});
+
+
+// Win conditions: each key beats it's value
 const winConditions = {
     rock: "scissors",
     paper: "rock",
@@ -24,24 +42,12 @@ const winConditions = {
 }
 
 
-startButton.addEventListener("click", function() {
-    mainMenu.style.display = "none";
-    gameScreen.style.display = "block";
-});
-
-
-homeButton.addEventListener("click", function() {
-    mainMenu.style.display = "block";
-    gameScreen.style.display = "none";
-});
-
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
 
     if (randomNumber === 0) {
         return "rock";
-    } else if  (computerChoice === 1) {
+    } else if  (randomNumber === 1) {
         return "paper";
     } else {
         return "scissors";
@@ -57,10 +63,14 @@ function playGame(playerChoice) {
 
 function compareChoice(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        // tie
+        resultMessage.textContent = "It's a Tie!";
     } else if (winConditions[playerChoice] === computerChoice) {
-        // player wins
+        playerScoreCount++;
+        playerScore.textContent = playerScoreCount;
+        resultMessage.textContent = "You Win!";
     } else {
-        // computer wins
+        computerScoreCount++;
+        computerScore.textContent = computerScoreCount;
+        resultMessage.textContent = "Computer Wins!";
     }
 }

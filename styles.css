@@ -1,0 +1,51 @@
+:root {
+    /* Colors */
+    --off-white: #F5F5F0;
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark-gray: #424242;
+    --light-gray: #9c9c9c;
+    --dark-blue: #01132b;
+    --light-blue: #1065d3;
+
+    /* Typography: mobile */
+    --text-sm: 1.4rem; 
+    --text-base: 1.6rem; 
+    --text-md: 1.8rem; 
+    --text-lg: 2.4rem; 
+    --text-xl: 3rem; 
+    --text-2xl: 3.5rem; 
+}
+
+/* Color Utility Classes */
+.off-white { color: var(--off-white); }
+.white { color: var(--white);}
+.black { color: var(--black);}
+.dark-gray { color: var(--dark-gray);}
+.light-gray { color: var(--light-gray);}
+.dark-blue { color: var(--dark-blue);}
+.light-blue { color: var(--light-blue)}
+
+
+/* Typography Utility Classes */
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-md { font-size: var(--text-md); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); } /* mobile base */
+
+/* Document Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;     /* Placeholder font for now */
+    transition: .2s linear;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
