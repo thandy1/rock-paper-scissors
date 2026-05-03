@@ -1,12 +1,11 @@
 :root {
     /* Colors */
-    --off-white: #F5F5F0;
     --white: #FFFFFF;
-    --black: #000000;
     --dark-gray: #424242;
     --light-gray: #9c9c9c;
-    --dark-blue: #01132b;
-    --light-blue: #1065d3;
+    --dark-blue-gray: #111827;
+    --light-blue-gray: #1b253b;
+    --yellow: #ffed4a;
 
     /* Typography: mobile */
     --text-sm: 1.4rem; 
@@ -17,23 +16,12 @@
     --text-2xl: 3.5rem; 
 }
 
-/* Color Utility Classes */
-.off-white { color: var(--off-white); }
-.white { color: var(--white);}
-.black { color: var(--black);}
-.dark-gray { color: var(--dark-gray);}
-.light-gray { color: var(--light-gray);}
-.dark-blue { color: var(--dark-blue);}
-.light-blue { color: var(--light-blue)}
+/* Typography: Utility Classes */
+.light-gray { color: var(--light-gray); }
+.dark-gray { color: var(--dark-gray); }
+.white { color: var(--white); }
+.yellow { color: var(--yellow); }
 
-
-/* Typography Utility Classes */
-.text-sm { font-size: var(--text-sm); }
-.text-base { font-size: var(--text-base); }
-.text-md { font-size: var(--text-md); }
-.text-lg { font-size: var(--text-lg); }
-.text-xl { font-size: var(--text-xl); }
-.text-2xl { font-size: var(--text-2xl); } /* mobile base */
 
 /* Document Reset */
 * {
@@ -49,3 +37,87 @@ html {
     font-size: 62.5%;
     overflow-x: hidden;
 }
+
+body {
+    background: var(--dark-blue-gray);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1.6rem;
+    width: 100%;
+}
+
+header #header-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 768px;
+    margin-bottom: 5rem;
+}
+
+header #scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--light-blue-gray);
+    width: 100%;
+    height: 10vh;
+    padding: 1.6rem;
+    margin: 0 auto;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1),
+    0 4px 6px rgba(0,0,0,0.1);
+}
+
+header #player-score,
+header #round-indicator,
+header #computer-score {
+    display: block;
+    text-align: center;
+    font-size: 3.2rem;
+}
+
+header #quit-button {
+    border-radius: 5rem;
+    border: 2px solid #ff4444;
+    font-size: 2rem;
+    padding: 1rem 1.4rem;
+    background: #3b0c0c;
+    color: #ff4444;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4),
+    0 0 10px rgba(255,68,68,0.2);
+}
+
+header #quit-button:hover {
+    background: #ff4444;
+    color: var(--white);
+}
+
+/* Main */
+main #result-message {
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+main #play-again-button {
+    display: block;    /* temporary for styles */
+
+}
+
+/* Media queries (Tablet and above) */
+@media (min-width: 768px ) {
+    header #header-container {
+        max-width: 768px;
+    } 
+
+} 
+
