@@ -25,35 +25,34 @@
                     <span id="computer-score" class="white">0</span>
                 </div>
             </div>
-            <!-- Quit button -->
-            <button type="button" id="quit-button" class="dark-gray">✕</button>
         </div>
     </header>
-
+    
     <main>
         <!-- Result display -->
         <p id="result-message" class="yellow">SELECT YOUR HAND</p>
         <p id="game-over-message"></p>
-        <button type="button" id="play-again-button" class="dark-gray">Play Again?</button>
-    
-
-        <!-- Choices container -->
-        <div id="choices-container">
-            <div id="choices">
-                <button type="button" class="choice-button" data-choice="rock">
-                    <span class="choice-icon">✊</span>
-                    <p class="dark-gray">ROCK</p>
-                </button>
-                <button type="button" class="choice-button"  data-choice="paper">
-                    <span class="choice-icon">🖐</span>
-                    <p class="dark-gray">PAPER</p>
-                </button>
-                <button type="button" class="choice-button" data-choice="scissors">
-                    <span class="choice-icon">✌️</span>
-                    <p class="dark-gray">SCISSORS</p>
-                </button>
-            </div>
+        <button type="button" id="play-again-button" class="white">Play Again?</button>
+        
+        
+        <!-- Choices -->
+        <div id="choices">
+            <button type="button" class="choice-button" data-choice="rock">
+                <span class="choice-icon">✊</span>
+                <p class="dark-gray white text-md">ROCK</p>
+            </button>
+            <button type="button" class="choice-button"  data-choice="paper">
+                <span class="choice-icon">🖐</span>
+                <p class="dark-gray white text-md">PAPER</p>
+            </button>
+            <button type="button" class="choice-button" data-choice="scissors">
+                <span class="choice-icon">✌️</span>
+                <p class="dark-gray white text-md">SCISSORS</p>
+            </button>
         </div>
+
+        <!-- Quit button -->
+        <button type="button" id="quit-button" class="dark-gray">Quit</button>
     </main>
 
     <footer>
