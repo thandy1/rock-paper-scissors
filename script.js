@@ -129,14 +129,11 @@ function playAnimation(button) {
     if (isAnimating) return;
     let playerChoice = button.dataset.choice;
     let computerChoice = getComputerChoice();
-
     playerHand.textContent = "✊";
     computerHand.textContent = "✊";
-
     playerHand.classList.add("shake");
     computerHand.classList.add("shake");
     isAnimating = true;
-
     setTimeout(() => {
         playerHand.classList.remove("shake");
         computerHand.classList.remove("shake");
