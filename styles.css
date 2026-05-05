@@ -59,23 +59,15 @@ header {
     width: 100%;
 }
 
-header #header-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 650px;
-}
-
 header #scoreboard {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background: var(--light-blue-gray);
     width: 100%;
+    max-width: 650px;
     height: 10vh;
     padding: 1.6rem;
-    margin: 0 auto;
     border-radius: 1.2rem;
     box-shadow: 0 0 20px rgba(0,0,0,0.1),
     0 4px 6px rgba(0,0,0,0.1);
@@ -86,7 +78,7 @@ header #round-indicator,
 header #computer-score {
     display: block;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 4vh, 3.2rem);
 }
 
 /* Main */
@@ -97,6 +89,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    width: 100%;
 }
 
 main #game-content {
@@ -104,16 +97,15 @@ main #game-content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem;
     width: 100%;
 }
 
 main #result-message {
     display: block;
-    margin: 0 auto;
     padding: 2rem;
     text-align: center;
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 4vh, 3.2rem);
     font-weight: bold;
 }
 
@@ -136,10 +128,10 @@ main #play-again-button:hover {
 main #choices {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    width: 90%;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 1.6rem;
     max-width: 650px;
-    margin: 0 auto;
 }
 
 main .choice-button {
@@ -148,16 +140,17 @@ main .choice-button {
     border: none;
     box-shadow: 0 0 20px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.1);
     cursor: pointer;
-    aspect-ratio: 2 / 2;
+    aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
+    padding: 4px;
 }
 
 main .choice-icon {
-    font-size: 4.8rem;
+    font-size: 4rem;
 }
 
 main .choice-button:hover {
@@ -167,7 +160,7 @@ main .choice-button:hover {
 
 main .choice-button:active {
     transform: translate(2px);
-    box-shadow: 0 2px 4px (0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 main #quit-button {
@@ -189,7 +182,7 @@ main #quit-button:hover {
 
 main #quit-button:active,
 main #play-again-button:active {
-    transform: translate(2px);
+    transform: translateY(2px);
 }
 
 footer {
@@ -209,7 +202,7 @@ main #hand-display {
 
 main #player-hand,
 main #computer-hand {
-    font-size: 8rem;
+    font-size: clamp(4rem, 10vw, 8rem);
 }
 
 main #player-hand {
@@ -241,11 +234,25 @@ main #versus {
 
 /* Media queries (Tablet and above) */
 @media (min-width: 768px ) {
-    header #header-container {
+    header #scoreboard {
         max-width: 900px;
     } 
 
+    main .choice-icon {
+        font-size: 6.4rem;
+    }
+
+    main #choices {
+        gap: 2.5rem;
+        width: 90%;
+    }
+
+    main .choice-button {
+        gap: 2rem;
+    }
+
 } 
+
 
 /* Keyframes */
 @keyframes shake-computer {
