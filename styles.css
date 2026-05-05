@@ -1,8 +1,9 @@
+/* Exo 2 font */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap');
+
 :root {
     /* Colors */
     --white: #FFFFFF;
-    --dark-gray: #424242;
-    --light-gray: #9c9c9c;
     --dark-blue-gray: #111827;
     --light-blue-gray: #1b253b;
     --yellow: #ffed4a;
@@ -25,8 +26,6 @@
 .text-2xl { font-size: var(--text-2xl); }
 
 /* Color: Utility Classes */
-.light-gray { color: var(--light-gray); }
-.dark-gray { color: var(--dark-gray); }
 .white { color: var(--white); }
 .yellow { color: var(--yellow); }
 
@@ -35,7 +34,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;     /* Placeholder font for now */
+    font-family: "Exo 2", sans-serif;     
     transition: .2s linear;
 }
 
@@ -97,7 +96,16 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+}
+
+main #game-content {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 5rem;
+    width: 100%;
 }
 
 main #result-message {
@@ -110,10 +118,10 @@ main #result-message {
 }
 
 main #play-again-button {
-    display: none;    /* temporary for styles */
-    color: var(--yellow);
+    display: none;   
+    color: var(--white);
     background: transparent;
-    border: 2px solid var(--yellow);
+    border: 2px solid var(--white);
     border-radius: 2rem;
     padding: 1rem 2.4rem;
     font-size: 2rem;
@@ -121,12 +129,12 @@ main #play-again-button {
 }
 
 main #play-again-button:hover {
-    background: var(--yellow);
+    background: var(--white);
     color: black;
 }
 
 main #choices {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     width: 90%;
@@ -189,6 +197,48 @@ footer {
     text-align: center;
 }
 
+main #hand-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+main #player-hand,
+main #computer-hand {
+    font-size: 8rem;
+}
+
+main #player-hand {
+    display: inline-block;
+    transform: scaleX(-1) rotate(-90deg);
+}
+
+main #computer-hand {
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+
+main #player-hand.shake {
+    animation: shake-player 0.8s ease-in-out 0.2s 1;
+}
+
+main #computer-hand.shake {
+    animation: shake-computer 0.8s ease-in-out 0.2s 1;
+}
+
+main #versus {
+    font-size: var(--text-md);
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    border-radius: 5rem;
+    padding: 1rem;
+    background: transparent;
+}
+
 /* Media queries (Tablet and above) */
 @media (min-width: 768px ) {
     header #header-container {
@@ -197,3 +247,19 @@ footer {
 
 } 
 
+/* Keyframes */
+@keyframes shake-computer {
+    0% { transform: rotate(-90deg) translateY(0); }
+    25% { transform: rotate(-90deg) rotate(10deg) translateY(-10px) translateX(20px); }
+    50% { transform: rotate(-90deg) translateY(0); }
+    75% { transform: rotate(-90deg) rotate(10deg) translateY(-10px) translateX(20px); }
+    100% { transform: rotate(-90deg) translateY(0); }
+}
+
+@keyframes shake-player {
+    0% { transform: scaleX(-1) rotate(-90deg) translateY(0); }
+    25% { transform: scaleX(-1) rotate(-90deg) rotate(10deg) translateY(-10px) translateX(20px); }
+    50% { transform: scaleX(-1) rotate(-90deg) translateY(0); }
+    75% { transform: scaleX(-1) rotate(-90deg) rotate(10deg) translateY(-10px) translateX(20px); }
+    100% { transform: scaleX(-1) rotate(-90deg) translateY(0); }
+}
