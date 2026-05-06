@@ -1,6 +1,7 @@
 # Rock Paper Scissors
 A browser-based Rock Paper Scissors game built with HTML, CSS, and JavaScript.
-**Live Demo:** [Play Here](https://your-url.vercel.app)
+
+**Live Demo:** [Play Here](https://play-web-rps.vercel.app/)
 
 ## About
 An interactive Rock Paper Scissors game where the player competes against 
